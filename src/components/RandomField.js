@@ -1,24 +1,15 @@
 import React from "react";
 
+function RandomField({ apiCallWithRandomNumber }) {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    apiCallWithRandomNumber();
+  };
 
-
-export function RandomField({apiCallWithRandomNumber, numberfact, createHistoryFacts}){
-	
-		
-		const handleSubmit = (evt) => {
-			evt.preventDefault();
-      apiCallWithRandomNumber()
-      createHistoryFacts()
-      createHistoryFacts(numberfact)
-		}
-
-		return (
-		  <form onSubmit={handleSubmit}>
-			<input type="submit" value="Random Number" />
-		  </form>
-		);
-	  }
-export default RandomField
-
-
-	
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="submit" value="Random Number" />
+    </form>
+  );
+}
+export default RandomField;
